@@ -15,3 +15,10 @@ Route::apiResource('elemento-estado', ElementoEstadoController::class);
 
 
 
+/// Horarios
+use App\Http\Controllers\Horario\HorarioController;
+
+Route::get('horarios/turno/{turno}', [HorarioController::class, 'horariosPorTurno']);
+Route::get('horarios/estadisticas', [HorarioController::class, 'estadisticas']);
+
+Route::apiResource('horarios', HorarioController::class);
