@@ -48,3 +48,48 @@ use App\Http\Controllers\NotificacionController;
 
 Route::get('/notificaciones', [NotificacionController::class, 'index']);
 Route::put('/notificaciones/{id}', [NotificacionController::class, 'update']);
+
+
+
+use App\Http\Controllers\UserController;
+
+Route::get('/employees', [UserController::class, 'employeesApi']);
+Route::get('/employees/{id}', [UserController::class, 'employeeApi']);
+
+use App\Http\Controllers\AttendanceController;
+
+Route::get('/attendance/{employeeId}',[AttendanceController::class,'attendanceApi']);
+
+Route::post('/attendance',[AttendanceController::class,'registerAttendanceApi']);
+
+
+
+use App\Http\Controllers\ActivityController;
+
+Route::get('/activities/{employeeId}',[ActivityController::class,'activitiesApi']);
+
+Route::post('/activities',[ActivityController::class,'registerActivityApi']);
+
+
+use App\Http\Controllers\ObservationController;
+
+Route::get('/observations/{employeeId}',[ObservationController::class,'observationsApi']);
+
+Route::post('/observations',[ObservationController::class,'registerObservationApi']);
+
+Route::put('/observations/{id}',[ObservationController::class,'updateObservationApi']);
+
+use App\Http\Controllers\ChatController;
+use App\Http\Controllers\MessageController;
+
+//================ CHAT ================
+
+Route::get('/chats',[ChatController::class,'chatsApi']);
+
+Route::post('/chats',[ChatController::class,'createChatApi']);
+
+//=============== MENSAJES ==============
+
+Route::get('/chats/{chatId}/messages',[MessageController::class,'messagesApi']);
+
+Route::post('/chats/{chatId}/messages',[MessageController::class,'sendMessageApi']);
