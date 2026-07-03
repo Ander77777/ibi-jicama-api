@@ -23,7 +23,17 @@ Route::get('horarios/estadisticas', [HorarioController::class, 'estadisticas']);
 
 Route::apiResource('horarios', HorarioController::class);
 
+//Asignacion de areas
+use App\Http\Controllers\Area\AreaController;
 
+Route::get('areas/historial',[AreaController::class,'historial']);
+Route::get('areas/resumen-dia',[AreaController::class,'resumenDia']);
+Route::get('areas/productividad-semanal',[AreaController::class,'productividadSemanal']);
+
+Route::patch('areas/{id}/progreso',[AreaController::class,'actualizarProgreso']);
+Route::patch('areas/{id}/estado',[AreaController::class,'actualizarEstado']);
+
+Route::apiResource('areas',AreaController::class);
 
 
 
