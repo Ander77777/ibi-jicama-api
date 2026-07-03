@@ -24,6 +24,25 @@ Route::get('horarios/estadisticas', [HorarioController::class, 'estadisticas']);
 Route::apiResource('horarios', HorarioController::class);
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Producciones
 use App\Http\Controllers\produccion\ProductionController;
 
