@@ -22,3 +22,29 @@ Route::get('horarios/turno/{turno}', [HorarioController::class, 'horariosPorTurn
 Route::get('horarios/estadisticas', [HorarioController::class, 'estadisticas']);
 
 Route::apiResource('horarios', HorarioController::class);
+
+
+// Producciones
+use App\Http\Controllers\produccion\ProductionController;
+
+Route::get('/production',[ProductionController::class,'index']);
+
+//notificaciones
+use App\Http\Controllers\notificaciones\AlertaController;
+
+Route::get('/alertas', [AlertaController::class,'index']);
+
+
+use App\Http\Controllers\MantenimientoController;
+
+Route::get('/mantenimiento', [MantenimientoController::class, 'index']);
+
+use App\Http\Controllers\Bitacora\ActividadController;
+
+Route::get('/actividades', [ActividadController::class,'index']);
+
+
+use App\Http\Controllers\NotificacionController;
+
+Route::get('/notificaciones', [NotificacionController::class, 'index']);
+Route::put('/notificaciones/{id}', [NotificacionController::class, 'update']);
