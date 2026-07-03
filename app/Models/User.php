@@ -29,4 +29,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function producciones()
+{
+    return $this->hasMany(Produccion::class,'encargado_id');
+}
 }
