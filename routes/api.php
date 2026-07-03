@@ -14,7 +14,6 @@ Route::apiResource('elemento-estado', ElementoEstadoController::class);
 
 
 
-
 /// Horarios
 use App\Http\Controllers\Horario\HorarioController;
 
@@ -22,6 +21,9 @@ Route::get('horarios/turno/{turno}', [HorarioController::class, 'horariosPorTurn
 Route::get('horarios/estadisticas', [HorarioController::class, 'estadisticas']);
 
 Route::apiResource('horarios', HorarioController::class);
+
+
+
 
 //Asignacion de areas
 use App\Http\Controllers\Area\AreaController;
@@ -36,10 +38,15 @@ Route::patch('areas/{id}/estado',[AreaController::class,'actualizarEstado']);
 Route::apiResource('areas',AreaController::class);
 
 
+
+
 // Producciones
 use App\Http\Controllers\produccion\ProductionController;
 
 Route::get('/production',[ProductionController::class,'index']);
+
+
+
 
 //notificaciones
 use App\Http\Controllers\notificaciones\AlertaController;
@@ -47,15 +54,25 @@ use App\Http\Controllers\notificaciones\AlertaController;
 Route::get('/alertas', [AlertaController::class,'index']);
 
 
+
+
+//mantenimientos
 use App\Http\Controllers\MantenimientoController;
 
 Route::get('/mantenimiento', [MantenimientoController::class, 'index']);
 
+
+
+
+//bitacora
 use App\Http\Controllers\Bitacora\ActividadController;
 
 Route::get('/actividades', [ActividadController::class,'index']);
 
 
+
+
+//notificaciones
 use App\Http\Controllers\NotificacionController;
 
 Route::get('/notificaciones', [NotificacionController::class, 'index']);
@@ -63,34 +80,45 @@ Route::put('/notificaciones/{id}', [NotificacionController::class, 'update']);
 
 
 
+
+//empleados
 use App\Http\Controllers\UserController;
 
 Route::get('/employees', [UserController::class, 'employeesApi']);
 Route::get('/employees/{id}', [UserController::class, 'employeeApi']);
 
+
+
+
+//asistencias
 use App\Http\Controllers\AttendanceController;
 
 Route::get('/attendance/{employeeId}',[AttendanceController::class,'attendanceApi']);
-
 Route::post('/attendance',[AttendanceController::class,'registerAttendanceApi']);
 
 
 
+
+//actividades
 use App\Http\Controllers\ActivityController;
 
 Route::get('/activities/{employeeId}',[ActivityController::class,'activitiesApi']);
-
 Route::post('/activities',[ActivityController::class,'registerActivityApi']);
 
 
+
+
+//observaciones
 use App\Http\Controllers\ObservationController;
 
 Route::get('/observations/{employeeId}',[ObservationController::class,'observationsApi']);
-
 Route::post('/observations',[ObservationController::class,'registerObservationApi']);
-
 Route::put('/observations/{id}',[ObservationController::class,'updateObservationApi']);
 
+
+
+
+//Chat
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\MessageController;
 
