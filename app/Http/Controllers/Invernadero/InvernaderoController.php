@@ -17,4 +17,8 @@ class InvernaderoController extends Controller
             'data' => $invernaderos
         ], 200);
     }
+    public function producciones()
+{
+    return $this->hasMany(Produccion::class);
+}
 }

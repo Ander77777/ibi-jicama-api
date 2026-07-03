@@ -22,4 +22,9 @@ class Invernadero extends Model
         'largo',
         'descripcion'
     ];
+
+    public function alertas()
+{
+    return $this->hasMany(Alerta::class);
+}
 }
