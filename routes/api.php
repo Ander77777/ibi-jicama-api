@@ -23,9 +23,6 @@ Route::get('horarios/estadisticas', [HorarioController::class, 'estadisticas']);
 
 Route::apiResource('horarios', HorarioController::class);
 
-
-
-
 //Asignacion de areas
 use App\Http\Controllers\Area\AreaController;
 
@@ -37,3 +34,21 @@ Route::patch('areas/{id}/progreso',[AreaController::class,'actualizarProgreso'])
 Route::patch('areas/{id}/estado',[AreaController::class,'actualizarEstado']);
 
 Route::apiResource('areas',AreaController::class);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
