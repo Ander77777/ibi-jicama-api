@@ -12,7 +12,19 @@ Route::get('/lectura-sensores', [LecturaSensorController::class, 'index']);
 Route::apiResource('sensores-iot', SensorController::class);
 Route::apiResource('elemento-estado', ElementoEstadoController::class);
 
+//Dashboard
+use App\Http\Controllers\Api\DashboardApiController;
 
+Route::get('/propietarios', [DashboardApiController::class, 'propietarios']);
+
+Route::get('/invernaderos/{userId}',[DashboardApiController::class, 'invernaderos']);
+
+Route::get('/camas/{invernaderoId}',[DashboardApiController::class, 'camas']);
+
+Route::get('/cultivos/{userId}', [DashboardApiController::class, 'cultivos']);
+
+
+Route::get('/dashboard/{id}', [DashboardApiController::class, 'dashboard']);
 
 /// Horarios
 use App\Http\Controllers\Horario\HorarioController;

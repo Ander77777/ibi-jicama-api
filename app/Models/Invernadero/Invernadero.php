@@ -4,6 +4,8 @@ namespace App\Models\Invernadero;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Invernadero\Cama;
+use App\Models\User;
 
 class Invernadero extends Model
 {
@@ -27,4 +29,15 @@ class Invernadero extends Model
 {
     return $this->hasMany(Alerta::class);
 }
+
+
+public function camas()
+{
+    return $this->hasMany(Cama::class);
+}
+
+public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
