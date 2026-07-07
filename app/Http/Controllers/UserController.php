@@ -81,6 +81,8 @@ public function employeeApi($id)
                 'id' => $user->id,
                 'nombre' => $user->name,
                 'correo' => $user->email,
+                'rol_id'=> $user->rol_id,
+                
 
                 'fotografia' => $user->datosGenerales?->image
                     ? asset('storage/' . $user->datosGenerales->image)
@@ -91,6 +93,7 @@ public function employeeApi($id)
                 'turno' => 'Matutino',
                 'invernadero' => 'Invernadero UTP',
                 'estado_laboral' => 'Activo',
+
 
             ]
 
